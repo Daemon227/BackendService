@@ -13,5 +13,5 @@ public partial class VersionColor
 
     public virtual MotoVersion? MaVersionNavigation { get; set; }
 
-    public virtual ICollection<VersionImage> VersionImages { get; set; } = new List<VersionImage>();
+    public virtual ICollection<VersionImage>? VersionImages { get; set; }
 }

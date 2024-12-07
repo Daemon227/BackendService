@@ -13,6 +13,6 @@ namespace BackendService.ViewModels
         public string? MaXe { get; set; }
 
         //public virtual MotoBike? MaXeNavigation { get; set; }
-        public virtual ICollection<VersionColorVM> VersionColorVM { get; set; } = new List<VersionColorVM>();
+        public virtual ICollection<VersionColorVM>? VersionColorVM { get; set; }
     }
 }

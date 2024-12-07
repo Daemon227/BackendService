@@ -15,5 +15,5 @@ public partial class MotoVersion
 
     public virtual MotoBike? MaXeNavigation { get; set; }
 
-    public virtual ICollection<VersionColor> VersionColors { get; set; } = new List<VersionColor>();
+    public virtual ICollection<VersionColor>? VersionColors { get; set; }
 }

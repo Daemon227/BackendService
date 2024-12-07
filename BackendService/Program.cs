@@ -4,6 +4,7 @@ using BackendService.Models;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace BackendService
 {
@@ -25,7 +26,11 @@ namespace BackendService
             builder.Services.AddControllers().AddJsonOptions(options => 
                 { options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve; });
 
-            builder.Services.AddEndpointsApiExplorer(); 
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 1024 * 1024 * 50; // 50 MB
+            });
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             // Add CORS policy

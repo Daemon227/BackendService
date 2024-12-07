@@ -58,12 +58,12 @@ namespace BackendService.ViewModels
 
         public string? MaLibrary { get; set; }
 
-        //public virtual Brand? MaHangSanXuatNavigation { get; set; }
+        public virtual BrandVM? MaHangSanXuatNavigation { get; set; }
 
         public virtual LibraryVM? MaLibraryNavigation { get; set; }
 
-        //public virtual MotoType? MaLoaiNavigation { get; set; }
+        public virtual TypeVM? MaLoaiNavigation { get; set; }
 
-        //public virtual ICollection<MotoVersion> MotoVersions { get; set; } = new List<MotoVersion>();
+        public virtual ICollection<VersionVM>? MotoVersions { get; set; } = new List<VersionVM>();
     }
 }

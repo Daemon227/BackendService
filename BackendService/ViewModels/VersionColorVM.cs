@@ -12,6 +12,6 @@ namespace BackendService.ViewModels
 
         //public virtual MotoVersion? MaVersionNavigation { get; set; }
 
-        public virtual ICollection<VersionImageVM> VersionImageVM { get; set; } = new List<VersionImageVM>();
+        public virtual ICollection<VersionImageVM>? VersionImageVM { get; set; }
     }
 }

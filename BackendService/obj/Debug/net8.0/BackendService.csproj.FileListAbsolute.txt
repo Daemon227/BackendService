@@ -140,3 +140,4 @@ D:\HOC TAP\HOC KY 5\PTPM DV\Website\BackendService\BackendService\bin\Debug\net8
 D:\HOC TAP\HOC KY 5\PTPM DV\Website\BackendService\BackendService\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\HOC TAP\HOC KY 5\PTPM DV\Website\BackendService\BackendService\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\HOC TAP\HOC KY 5\PTPM DV\Website\BackendService\BackendService\bin\Debug\net8.0\X.PagedList.dll
+D:\HOC TAP\HOC KY 5\PTPM DV\Website\BackendService\BackendService\obj\Debug\net8.0\BackendService.sourcelink.json

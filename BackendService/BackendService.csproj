@@ -19,4 +19,10 @@
     <PackageReference Include="X.PagedList" Version="8.4.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Datas\LibraryImages\" />
+    <Folder Include="Datas\Images\" />
+    <Folder Include="Datas\VersionImages\" />
+  </ItemGroup>
+
 </Project>

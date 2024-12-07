@@ -23,7 +23,7 @@ namespace BackendService.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{motoID}/Version")]
+        [HttpGet("{motoID}/Versions")]
         public async Task<IActionResult> GetVersions(string motoID)
         {
             var versions = await _db.MotoVersions
@@ -35,7 +35,7 @@ namespace BackendService.Controllers
             return Ok(mappedResult);
         }
 
-        [HttpGet("Version/{id}")]
+        [HttpGet("Versions/{id}")]
         public async Task<IActionResult> GetVersion(string id)
         {
             var version = await _db.MotoVersions
@@ -54,25 +54,23 @@ namespace BackendService.Controllers
             }
         }
 
-        [HttpPost("Version")]
+        [HttpPost("Versions")]
         public async Task<IActionResult> CreateVersion([FromBody] VersionVM versionVM)
         {
-            if (!ModelState.IsValid)
+            var versionIDCheck = _db.MotoVersions.FirstOrDefault(v => v.MaVersion == versionVM.MaVersion);
+            if (versionIDCheck != null) return BadRequest("Mã version bị trùng");
+            else
             {
-                return BadRequest(ModelState);
+                var newVersion = _mapper.Map<MotoVersion>(versionVM);
+                _db.MotoVersions.Add(newVersion);
+                await _db.SaveChangesAsync();
+                var createdVersion = _mapper.Map<VersionVM>(newVersion);
+                return CreatedAtAction(nameof(GetVersion), new { id = newVersion.MaXe}, createdVersion);
             }
-
-            var newVersion = _mapper.Map<MotoVersion>(versionVM);
-
-            _db.MotoVersions.Add(newVersion);
-            await _db.SaveChangesAsync();
-
-            var createdVersion = _mapper.Map<VersionVM>(newVersion);
-
-            return CreatedAtAction(nameof(GetVersion), new { id = newVersion.MaXe }, createdVersion);
+           
         }
 
-        [HttpPut("Version/{id}")]
+        [HttpPut("Versions/{id}")]
         public async Task<IActionResult> UpdateVersion(string id, [FromBody] VersionVM versionVM)
         {
             if (id != versionVM.MaVersion)
@@ -81,8 +79,6 @@ namespace BackendService.Controllers
             }
 
             var existingVersion = await _db.MotoVersions
-                .Include(v => v.VersionColors)
-                .ThenInclude(vc => vc.VersionImages)
                 .FirstOrDefaultAsync(v => v.MaVersion == id);
 
             if (existingVersion == null)
@@ -92,88 +88,13 @@ namespace BackendService.Controllers
 
             _mapper.Map(versionVM, existingVersion);
 
-            // Xóa các đối tượng con hiện tại
-            _db.VersionColors.RemoveRange(existingVersion.VersionColors);
-            _db.VersionImages.RemoveRange(existingVersion.VersionColors.SelectMany(vc => vc.VersionImages));
-
-            // Thêm các đối tượng con mới
-            foreach (var color in existingVersion.VersionColors)
-            {
-                _db.Entry(color).State = EntityState.Added;
-                foreach (var image in color.VersionImages)
-                {
-                    _db.Entry(image).State = EntityState.Added;
-                }
-            }
             await _db.SaveChangesAsync();
             return NoContent();
         }
 
-        [HttpPatch("Version/{id}")]
-        public async Task<IActionResult> UpdatePartialVersion(string id, [FromBody] JsonPatchDocument<VersionVM> patchDoc)
-        {
-            if (patchDoc == null)
-            {
-                return BadRequest("Invalid patch document.");
-            }
+        
 
-            var existingVersion = await _db.MotoVersions
-                .Include(v => v.VersionColors)
-                .ThenInclude(vc => vc.VersionImages)
-                .FirstOrDefaultAsync(v => v.MaVersion == id);
-
-            if (existingVersion == null)
-            {
-                return NotFound("Version not found.");
-            }
-
-            var versionToPatch = _mapper.Map<VersionVM>(existingVersion);
-            patchDoc.ApplyTo(versionToPatch);
-
-            if (!TryValidateModel(versionToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-
-            // Xóa theo dõi các đối tượng con hiện tại khỏi ngữ cảnh
-            _db.ChangeTracker.Clear();
-
-            _mapper.Map(versionToPatch, existingVersion);
-
-            // Xử lý các đối tượng con
-            foreach (var colorVM in versionToPatch.VersionColorVM)
-            {
-                var existingColor = existingVersion.VersionColors.FirstOrDefault(vc => vc.MaVersionColor == colorVM.MaVersionColor);
-                if (existingColor == null)
-                {
-                    var newColor = _mapper.Map<VersionColor>(colorVM);
-                    existingVersion.VersionColors.Add(newColor);
-                }
-                else
-                {
-                    _mapper.Map(colorVM, existingColor);
-                    foreach (var imageVM in colorVM.VersionImageVM)
-                    {
-                        var existingImage = existingColor.VersionImages.FirstOrDefault(img => img.ImageId == imageVM.ImageId);
-                        if (existingImage == null)
-                        {
-                            var newImage = _mapper.Map<VersionImage>(imageVM);
-                            existingColor.VersionImages.Add(newImage);
-                        }
-                        else
-                        {
-                            _mapper.Map(imageVM, existingImage);
-                        }
-                    }
-                }
-            }
-
-            await _db.SaveChangesAsync();
-            return Ok();
-        }
-
-
-        [HttpDelete("Version/{id}")]
+        [HttpDelete("Versions/{id}")]
         public async Task<IActionResult> DeleteVersion(string id)
         {
             var version = await _db.MotoVersions
@@ -189,7 +110,6 @@ namespace BackendService.Controllers
             // Xóa các đối tượng con trước khi xóa đối tượng cha
             _db.VersionColors.RemoveRange(version.VersionColors);
             _db.VersionImages.RemoveRange(version.VersionColors.SelectMany(vc => vc.VersionImages));
-
             _db.MotoVersions.Remove(version);
             await _db.SaveChangesAsync();
             return NoContent();

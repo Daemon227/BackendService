@@ -43,19 +43,20 @@ namespace BackendService.Controllers
         [HttpGet("Motos/{id}")]
         public async Task<IActionResult> GetMoto(string id)
         {
-            var moto = await _db.MotoBikes
+            var moto = await _db.MotoBikes.Where(m=>m.MaXe == id)
                 .Include(m => m.MotoVersions)
-                .ThenInclude(v => v.VersionColors)
+                .ThenInclude(v => v.VersionColors)        
                 .ThenInclude(vc => vc.VersionImages)
-                .Include(m => m.MaLibraryNavigation)
-                .ThenInclude(l => l.LibraryImages)
-                .FirstOrDefaultAsync(m => m.MaXe == id);
+                .Include(l=>l.MaLibraryNavigation)
+                .ThenInclude(li=>li.LibraryImages)
+                .Include(h=>h.MaHangSanXuatNavigation)
+                .Include(t=>t.MaLoaiNavigation)
+                .FirstOrDefaultAsync();
 
             if (moto == null)
             {
                 return NotFound("Moto not found.");
             }
-
             var mappedResult = _mapper.Map<MotoVM>(moto);
             return Ok(mappedResult);
         }

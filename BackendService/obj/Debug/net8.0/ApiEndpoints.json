@@ -100,6 +100,91 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackendService.Controllers.ColorController",
+    "Method": "CreateColor",
+    "RelativePath": "api/Color/Colors",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "colorVM",
+        "Type": "BackendService.ViewModels.VersionColorVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.ColorController",
+    "Method": "GetColor",
+    "RelativePath": "api/Color/Colors/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.ColorController",
+    "Method": "UpdateColor",
+    "RelativePath": "api/Color/Colors/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "colorVM",
+        "Type": "BackendService.ViewModels.VersionColorVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.ColorController",
+    "Method": "DeleteColor",
+    "RelativePath": "api/Color/Colors/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.LibraryController",
+    "Method": "GetLibrary",
+    "RelativePath": "api/Library/Libraries/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackendService.Controllers.MotoController",
     "Method": "GetMotos",
     "RelativePath": "api/Moto/Motos",
@@ -279,9 +364,25 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackendService.Controllers.UploadController",
+    "Method": "UploadFiles",
+    "RelativePath": "api/Upload/VersionImages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "GetVersions",
-    "RelativePath": "api/Version/{motoID}/Version",
+    "RelativePath": "api/Version/{motoID}/Versions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -297,7 +398,7 @@
   {
     "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "CreateVersion",
-    "RelativePath": "api/Version/Version",
+    "RelativePath": "api/Version/Versions",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -313,7 +414,7 @@
   {
     "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "GetVersion",
-    "RelativePath": "api/Version/Version/{id}",
+    "RelativePath": "api/Version/Versions/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -329,7 +430,7 @@
   {
     "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "UpdateVersion",
-    "RelativePath": "api/Version/Version/{id}",
+    "RelativePath": "api/Version/Versions/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -349,29 +450,8 @@
   },
   {
     "ContainingType": "BackendService.Controllers.VersionController",
-    "Method": "UpdatePartialVersion",
-    "RelativePath": "api/Version/Version/{id}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "patchDoc",
-        "Type": "Microsoft.AspNetCore.JsonPatch.JsonPatchDocument\u00601[[BackendService.ViewModels.VersionVM, BackendService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "DeleteVersion",
-    "RelativePath": "api/Version/Version/{id}",
+    "RelativePath": "api/Version/Versions/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -379,6 +459,22 @@
       {
         "Name": "id",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.VersionImageController",
+    "Method": "CreateImage",
+    "RelativePath": "api/VersionImage/VersionImages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "versionImage",
+        "Type": "BackendService.ViewModels.VersionImageVM",
         "IsRequired": true
       }
     ],

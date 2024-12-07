@@ -8,9 +8,17 @@ namespace BackendService.Configurations
     {
         public MappingProfile()
         {
-            CreateMap<MotoBike, MotoVM>();
+            CreateMap<MotoBike, MotoVM>()
+                .ForMember(dest => dest.MotoVersions, opt => opt.MapFrom(src => src.MotoVersions))
+                .ForMember(dest => dest.MaLibraryNavigation, opt => opt.MapFrom(src => src.MaLibraryNavigation))
+                .ForMember(dest => dest.MaHangSanXuatNavigation, opt => opt.MapFrom(src => src.MaHangSanXuatNavigation))
+                .ForMember(dest => dest.MaLoaiNavigation, opt => opt.MapFrom(src => src.MaLoaiNavigation));
 
-            CreateMap<MotoVM, MotoBike>();
+            CreateMap<MotoVM, MotoBike>()
+                .ForMember(dest => dest.MotoVersions, opt => opt.MapFrom(src => src.MotoVersions))
+                .ForMember(dest => dest.MaLibraryNavigation, opt => opt.MapFrom(src => src.MaLibraryNavigation))
+                .ForMember(dest => dest.MaHangSanXuatNavigation, opt => opt.MapFrom(src => src.MaHangSanXuatNavigation))
+                .ForMember(dest => dest.MaLoaiNavigation, opt => opt.MapFrom(src => src.MaLoaiNavigation));
 
             CreateMap<MotoVersion, VersionVM>()
                 .ForMember(dest => dest.VersionColorVM, opt => opt.MapFrom(src => src.VersionColors));
