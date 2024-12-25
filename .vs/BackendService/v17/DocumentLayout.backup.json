@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\versioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\versioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\motocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\motocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\configurations\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\configurations\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\versioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\versioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29979353-339F-456B-B452-C26C4F7CB630}|BackendService\\BackendService.csproj|d:\\hoc tap\\hoc ky 5\\ptpm dv\\website\\backendservice\\backendservice\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +42,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Program.cs",
+              "RelativeDocumentMoniker": "BackendService\\Program.cs",
+              "ToolTip": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Program.cs",
+              "RelativeToolTip": "BackendService\\Program.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T06:15:39.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "BackendService\\Controllers\\ImageController.cs",
+              "ToolTip": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "BackendService\\Controllers\\ImageController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAowEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T05:51:17.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Configurations\\MappingProfile.cs",
               "RelativeDocumentMoniker": "BackendService\\Configurations\\MappingProfile.cs",
@@ -50,19 +83,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "VersionController.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\VersionController.cs",
               "RelativeDocumentMoniker": "BackendService\\Controllers\\VersionController.cs",
               "ToolTip": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\VersionController.cs",
               "RelativeToolTip": "BackendService\\Controllers\\VersionController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAuwG8AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-24T19:50:48.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "UploadController.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\UploadController.cs",
               "RelativeDocumentMoniker": "BackendService\\Controllers\\UploadController.cs",
@@ -74,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LibraryController.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\LibraryController.cs",
               "RelativeDocumentMoniker": "BackendService\\Controllers\\LibraryController.cs",
@@ -82,25 +115,23 @@
               "RelativeToolTip": "BackendService\\Controllers\\LibraryController.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAwwGoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T15:22:05.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-24T15:22:05.396Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MotoController.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\MotoController.cs",
               "RelativeDocumentMoniker": "BackendService\\Controllers\\MotoController.cs",
-              "ToolTip": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\MotoController.cs*",
-              "RelativeToolTip": "BackendService\\Controllers\\MotoController.cs*",
-              "ViewState": "AgIAACkAAAAAAAAAAAAiwEsAAAAzAAAAAAAAAA==",
+              "ToolTip": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\MotoController.cs",
+              "RelativeToolTip": "BackendService\\Controllers\\MotoController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwKIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T13:01:33.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-24T13:01:33.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "BrandController.cs",
               "DocumentMoniker": "D:\\HOC TAP\\HOC KY 5\\PTPM DV\\Website\\BackendService\\BackendService\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "BackendService\\Controllers\\BrandController.cs",
@@ -108,8 +139,7 @@
               "RelativeToolTip": "BackendService\\Controllers\\BrandController.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAuwEEAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T21:16:56.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T21:16:56.579Z"
             }
           ]
         }

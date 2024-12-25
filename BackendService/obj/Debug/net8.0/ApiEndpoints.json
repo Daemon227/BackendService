@@ -169,6 +169,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackendService.Controllers.ImageController",
+    "Method": "GetAllImages",
+    "RelativePath": "api/Image/GetAllImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackendService.Controllers.LibraryController",
     "Method": "CreateLibrary",
     "RelativePath": "api/Library/Libraries",
