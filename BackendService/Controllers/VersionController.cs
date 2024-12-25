@@ -107,9 +107,9 @@ namespace BackendService.Controllers
                 return NotFound("Version not found.");
             }
 
-            // Xóa các đối tượng con trước khi xóa đối tượng cha
-            _db.VersionColors.RemoveRange(version.VersionColors);
-            _db.VersionImages.RemoveRange(version.VersionColors.SelectMany(vc => vc.VersionImages));
+			// Xóa các đối tượng con trước khi xóa đối tượng cha
+			_db.VersionImages.RemoveRange(version.VersionColors.SelectMany(vc => vc.VersionImages));
+			_db.VersionColors.RemoveRange(version.VersionColors);
             _db.MotoVersions.Remove(version);
             await _db.SaveChangesAsync();
             return NoContent();

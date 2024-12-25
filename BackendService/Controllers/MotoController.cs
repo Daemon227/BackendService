@@ -69,35 +69,15 @@ namespace BackendService.Controllers
                 return BadRequest("ID mismatch.");
             }
 
-            var existingMoto = await _db.MotoBikes.Include(m => m.MotoVersions)
-                    .ThenInclude(v => v.VersionColors)
-                    .ThenInclude(vc => vc.VersionImages)
-                    .Include(m => m.MaLibraryNavigation)
-                    .ThenInclude(l => l.LibraryImages)
-                    .FirstOrDefaultAsync(m => m.MaXe == id);
-
-            if (existingMoto == null)
+            var moto = await _db.MotoBikes.FindAsync(id);
+            
+            if (moto == null)
             {
                 return NotFound("Moto not found.");
             }
 
-            _mapper.Map(motoVM, existingMoto);
-
-            try
-            {
-                await _db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MotoExists(motoVM.MaXe))
-                {
-                    return NotFound("Moto not found.");
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _mapper.Map(motoVM, moto);
+            await _db.SaveChangesAsync();   
             return NoContent();
         }
 
@@ -109,19 +89,46 @@ namespace BackendService.Controllers
         [HttpDelete("Motos/{id}")]
         public async Task<IActionResult> DeleteMoto(string id)
         {
-            var moto = await _db.MotoBikes
-                .Include(m => m.MotoVersions)
-                .ThenInclude(v => v.VersionColors)
-                .ThenInclude(vc => vc.VersionImages)
-                .Include(m => m.MaLibraryNavigation)
-                .ThenInclude(l => l.LibraryImages)
-                .FirstOrDefaultAsync(m => m.MaXe == id);
+            var moto = await _db.MotoBikes.FirstOrDefaultAsync(m => m.MaXe == id);
 
             if (moto == null)
             {
                 return NotFound("Moto not found.");
             }
+            //xoa version: de sau
+            var version = await _db.MotoVersions.Where(v=>v.MaXe == moto.MaXe).ToListAsync();
+            if (version.Any()) 
+            { 
+                foreach (var v in version)
+                {
+                    var versionColor = await _db.VersionColors.Where(c=>c.MaVersion == v.MaVersion).ToListAsync();
+                    if (versionColor.Any())
+                    {
+                        foreach (var c in versionColor)
+                        {
+                            var images = await _db.VersionImages.Where(i => i.MaVersionColor == c.MaVersionColor).ToListAsync();
+                            if (images != null && images.Count > 0)
+                            {
+                                _db.VersionImages.RemoveRange(images);
+                            }
+                        }
+                        _db.VersionColors.RemoveRange(versionColor);
+                    }
+                }            
+                _db.MotoVersions.RemoveRange(version);
+            }
 
+            //xoa library
+            var library = await _db.MotoLibraries.FirstOrDefaultAsync(m => m.MaLibrary == moto.MaLibrary);
+            if (library != null) 
+            {
+				var images = await _db.LibraryImages.Where(i => i.MaLibrary == library.MaLibrary).ToListAsync();
+                if (images != null && images.Count > 0) 
+                {
+					_db.LibraryImages.RemoveRange(images);
+				}	
+				_db.MotoLibraries.Remove(library);
+			}
             _db.MotoBikes.Remove(moto);
             await _db.SaveChangesAsync();
 
@@ -135,15 +142,21 @@ namespace BackendService.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var moto =_db.MotoBikes.FirstOrDefault(m=>m.TenXe == motoVM.TenXe);
+            if (moto == null)
+            {
+                var newMoto = _mapper.Map<MotoBike>(motoVM);
 
-            var newMoto = _mapper.Map<MotoBike>(motoVM);
+                _db.MotoBikes.Add(newMoto);
+                await _db.SaveChangesAsync();
 
-            _db.MotoBikes.Add(newMoto);
-            await _db.SaveChangesAsync();
+                var createdMoto = _mapper.Map<MotoVM>(newMoto);
 
-            var createdMoto = _mapper.Map<MotoVM>(newMoto);
-
-            return CreatedAtAction(nameof(GetMoto), new { id = newMoto.MaXe }, createdMoto);
+                return CreatedAtAction(nameof(GetMoto), new { id = newMoto.MaXe }, createdMoto);
+            }
+            else return BadRequest("Tên xe đã tồn tại");
         }
+
+
     }
 }

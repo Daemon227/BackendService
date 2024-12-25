@@ -53,8 +53,7 @@ namespace BackendService.Controllers
                 var createdBrand = _mapper.Map<BrandVM>(brand);
                 return CreatedAtAction(nameof(GetBrand), new { id = createdBrand.MaHangSanXuat }, createdBrand);
             }
-            else return BadRequest("Mã, tên hãng Không được trùng");
-            
+            else return BadRequest("Mã, tên hãng Không được trùng");           
         }
 
         [HttpPut("Brands/{id}")]
@@ -114,5 +113,7 @@ namespace BackendService.Controllers
             await _db.SaveChangesAsync();
             return NoContent();
         }
+
+
     }
 }
