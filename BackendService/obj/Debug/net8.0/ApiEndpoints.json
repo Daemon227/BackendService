@@ -491,6 +491,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BackendService.Controllers.UserController",
+    "Method": "CreateBrand",
+    "RelativePath": "api/User/Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userVM",
+        "Type": "BackendService.ViewModels.UserVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackendService.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "api/User/Users/{Username}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BackendService.Controllers.VersionController",
     "Method": "GetVersions",
     "RelativePath": "api/Version/{motoID}/Versions",

@@ -70,6 +70,9 @@ namespace BackendService.Configurations
                 .ForMember(dest => dest.TenLoai, opt => opt.MapFrom(src => src.TenLoai))
                 .ForMember(dest => dest.DoiTuongSuDung, opt => opt.MapFrom(src => src.DoiTuongSuDung))
                 .ForMember(dest => dest.MoTaNgan, opt => opt.MapFrom(src => src.MoTaNgan));
+
+            CreateMap<User, UserVM>();
+            CreateMap<UserVM, User>();
         }
     }
 }
